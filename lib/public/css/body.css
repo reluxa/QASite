@@ -1,0 +1,60 @@
+body {
+	margin: 0;
+	padding: 0;
+background: rgb(178,225,255); /* Old browsers */
+background: -moz-linear-gradient(left,  #fde9c5 0%, #fcd7aa 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(190,225,255,1)), color-stop(100%,rgba(102,182,252,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(190,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(190,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(190,225,255,1) 0%,rgba(102,182,252,1) 100%); /* IE10+ */
+background: linear-gradient(left,  rgba(190,225,255,1) 0%,rgba(102,182,252,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=1 ); /* IE6-9 */
+
+/*	background: #000 url(../images/background.jpg) center center no-repeat; */
+/*        background-image: -moz-linear-gradient(left, #FFFFFF 0%, #00A3EF 100%); */
+/*	background-attachment:fixed; */
+	-moz-background-size: cover;
+	background-size: cover;
+	background-color:rgb(255,255,255);
+	overflow-y:scroll;
+}
+
+fbody
+{
+    	margin: 0;
+	padding: 0;
+
+    background: #fce2b2; /* Old browsers */
+    background: -moz-linear-gradient(left, #fce2b2 0%, #fbc98d 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fce2b2), color-stop(99%,#fbc98d)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fce2b2 0%,#fbc98d 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fce2b2 0%,#fbc98d 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fce2b2 0%,#fbc98d 99%); /* IE10+ */
+    background: linear-gradient(to bottom, #fce2b2 0%,#fbc98d 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fce2b2', endColorstr='#fbc98d',GradientType=0 ); /* IE6-9 */
+
+    	-moz-background-size: cover;
+	background-size: cover;
+	background-color:rgb(255,255,255);
+	overflow-y:scroll;
+}
+
+
+.container-background {
+        background: transparent url(../images/black75.png);
+	background: rgba(0, 0, 0, 0.2) none;
+
+        border-top-right-radius: 12px 12px;
+        -moz-border-radius-topright: 12px 12px;
+        border-bottom-right-radius: 12px 12px;
+ 	-moz-border-radius-bottomright:12px 12px;
+	border-bottom-left-radius: 12px 12px;
+	-moz-border-radius-bottomleft: 12px 12px;
+
+  	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../images/black75.png');
+	background-image:url(../images/black75.png);
+
+        padding: 1em;
+        padding-top: 2em;
+        margin-top: -2px;
+}

@@ -1,0 +1,61 @@
+!!!
+%html
+    %head
+        %title LSYH Overflow
+        %link(rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection")
+        %link(rel="stylesheet" href="/css/print.css" type="text/css" media="print")
+        / [if lt IE 8]
+            %link(rel="stylesheet" href="/css/ie.css" media="screen, projection")
+
+        %link(rel="stylesheet" href="/css/humanity/jquery-ui-1.9.2.custom.min.css")
+
+        %link(rel="stylesheet" href="/css/jquery.tagit.css")
+
+        %link(rel="stylesheet" href="/css/body.css")
+        %link(rel="stylesheet" href="/css/styles.css")
+        %link(rel="stylesheet" href="/css/upper-menu.css")
+        %link(rel="stylesheet" href="/css/wmd.css")
+        %link(rel="stylesheet" href="/css/prettify.css")
+
+        %script(type="text/javascript" src="/js/jquery-1.7.2.min.js")
+        %script(type="text/javascript" src="/js/jquery-ui-1.9.2.custom.min.js")
+        %script(type="text/javascript" src="/js/jquery.timeago.js")
+        %script(type="text/javascript" src="/js/tag-it.min.js")
+        %script(type="text/javascript" src="/js/qa.js")
+
+        / Markdown editor related styles
+
+        %script(type="text/javascript" src="/js/js-markdown-extra.js")
+        %script(type="text/javascript" src="/js/Markdown.MyConverter.js")
+        %script(type="text/javascript" src="/js/Markdown.Sanitizer.js")
+        %script(type="text/javascript" src="/js/Markdown.Editor.js")
+        %script(type="text/javascript" src="/js/prettify.js")
+
+    %body
+        %div.container
+            %hr.space
+            %img(src="/images/brand.jpg" width="100%")
+            %hr.break
+            - if authenticated
+                %span.align-right.text-right.lightcolor
+                    currently logged in: #{current_user()}
+                %hr.break
+            - else
+                %hr.space
+            %div.span-19
+                =navigation_button("Questions","/")
+                =navigation_button("Tags","/")
+                =navigation_button("Users","/")
+                =navigation_button("Badges","/")
+                =navigation_button("Unanswered","/show/unanswered")
+                - if authenticated
+                    =navigation_button("Logout","/logout")
+                - else
+                    =navigation_button("Login","/login")
+            %div.span-5.last
+                =navigation_button("Ask a Question","/add/question")
+            %hr.space
+            %div.container
+                =yield
+                %hr.space
+                #footer(align="right")Peter Bagrij, 2012

@@ -1,0 +1,48 @@
+#tablist{
+margin-left: 0;
+margin-bottom: 3px;
+margin-top: 0.1em;
+padding: 0px;
+text-align: left;
+}
+
+#tablist li{
+list-style: none;
+display: inline;
+}
+
+#tablist li a{
+text-decoration: none;
+padding: 3px 0.5em;
+margin-right: 2px;
+
+background: transparent url(../images/black75.png);
+background: rgba(0, 0, 0, 0.2) none;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../images/black75.png');
+background-image:url(../images/black75.png);
+
+border-top-left-radius: 8px 8px;
+border-top-right-radius: 8px 8px;
+-moz-border-radius-topleft: 8px 8px;
+-moz-border-radius-topright: 8px 8px;
+}
+
+#tablist li a:link, #tablist li a:visited{
+background: transparent url(../images/black75.png);
+background: rgba(0, 0, 0, 0.2) none;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../images/black75.png');
+background-image:url(../images/black75.png);
+font: bold 12px Verdana;
+}
+
+#tablist li a:hover{
+color: black;
+background: lightyellow;
+border-color: navy;
+font: bold 12px Verdana;
+}
+
+#tablist li a.current{
+background: lightyellow;
+font: bold 12px Verdana;
+}

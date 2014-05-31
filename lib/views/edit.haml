@@ -1,0 +1,17 @@
+%div.span-18
+    %form{:action=>"/save/question", :method=>"post"}
+        - if defined? question
+            %input{:name=>"qid", :type=>"hidden", :value=>"#{question.id}"}
+        %h3 Title
+        %input{:type=>"text", :name=>"q_title", :value=>((defined? question)? question.title : nil), :style=>"width: 100%;"}
+        = field_validation(((defined? question)? question: nil), :title)
+        %h3 Question
+        =render_component(:editor,{:text=>((defined? question)? question.text : nil), :name=>"q_text"})
+        = field_validation(((defined? question)? question: nil), :text)
+        %h3 Tags
+        %input{:id=>"tags", :name=>"tags", :value=>((defined? question)?(question.tags.collect{|tag| tag.name}.join(',')):nil)}
+        = field_validation(((defined? question)? question: nil), :tags)
+        %hr.space
+        %input{:type=>"submit", :value=>"Post your question"}
+%div.span-4.prepend-1
+    %h3 Some Useful Info Goes Here

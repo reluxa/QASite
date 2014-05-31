@@ -1,0 +1,57 @@
+%div.span-18
+    .title=question.title
+    %hr
+    %div.span-1.big.text-center
+        =vote_question(question)
+    %div.span-17.last
+        =display_markup(question.text)
+        %hr.space
+        =render_component(:comments,{:comments=>question.comments})
+        %hr.space
+        =display_action_button("edit","navigate('/edit/question/#{question.id}')")
+        =display_action_button("add comment","show('.question_comment')")
+        =display_action_button("share","alert('Not Yet Implemented!')")
+        %span.align-right.text-right.lightcolor
+            asked by #{question.user}
+        =render_component(:question_comment_editor,{:question=>question})
+    %hr.space
+    -if question.answers.size > 0
+        %number.big #{question.answers.size} Answers
+    - question.answers.each do |answer|
+        %hr
+        %div.span-1
+            %div.big.text-center.clear
+                =vote_answer(answer)
+            %div.huge.text-center
+                =show_accept_symbol(question,answer)
+        %div.span-17.last
+            =display_markup(answer.mtext)
+            %hr.space
+            .text-right=time_ago(answer.creation)
+            %hr.space
+            =render_component(:comments,{:comments=>answer.comments})
+            %hr.space
+            =display_action_button("add comment","show('.answer_#{answer.id}_comment')")
+            =display_action_button("share","alert('Not Yet Implemented!')")
+            %span.align-right.text-right.lightcolor
+                answered by #{answer.user}
+            =render_component(:answer_comment_editor,{:answer=>answer})
+            %hr.break
+        %hr.space
+    %hr
+    %div.span-15.push-1
+        %form{:action=>"/answer/question/#{question.id}", :method=>"post"}
+            %number.big Your Answer
+            =render_component(:editor,{:name=>"answer", :text=>""})
+            %input{:type=>"submit", :value=>"Post Your Answer"}
+%div.span-4.prepend-1
+    %h3 Tagged
+    =display_readonly_tags_vertical(question.tags)
+    %br
+    %br
+    %strong Visited
+    #{question.views} times
+    %br
+    %strong Asked
+    =time_ago(question.creation)
+

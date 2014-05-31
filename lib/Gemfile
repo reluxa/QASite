@@ -1,0 +1,9 @@
+# Gemfile
+source :rubygems
+               
+gem "sqlite3", "1.3.6"
+gem "data_mapper", "1.2.0"
+gem "dm-sqlite-adapter", "1.2.0"
+gem "sinatra", "1.3.3"
+gem "haml", "3.1.6"
+gem "builder", "3.1.4"

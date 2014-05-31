@@ -1,0 +1,6 @@
+require_relative 'main_routes'
+require_relative 'question_routes'
+require_relative 'auth_routes'
+require_relative 'question_util'
+require_relative 'rss_routes'
+require_relative 'jnlp_routes'

@@ -1,0 +1,7 @@
+- if comments.size > 0
+    %hr.dotted
+- comments.each do |comment|
+    .left.lightcolor=comment.text
+    .text-right.full.lightcolor
+        comment by #{comment.user} #{time_ago(comment.creation)}
+    %hr.dotted

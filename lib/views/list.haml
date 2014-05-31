@@ -1,0 +1,32 @@
+%div.span-18
+    %h2
+        =title
+    - questions.each do |question|
+        %div.span-1.text-center
+            %h3=question.votes.length
+            .small votes
+        %div.span-1.text-center
+            %h3=question.answers.length
+            .small answers
+        %div.span-1.text-center
+            %h3=question.views.to_i
+            .small views
+        %div.span-14.last.colborderleft
+            .title
+                %a{:href=>"/show/question/#{question.id.to_s}/#{escape_title(question.title)}/"}=question.title
+            %div=display_readonly_tags(question.tags)
+            %div.text-right=time_ago(question.creation)
+        %hr
+%div.span-4.prepend-1
+    %h3 Notifier
+    %a{:href=>"poller.jnlp"}
+        %img{:src=>"/images/webstart.png"}
+    %hr.space
+    %h3 Popular tags
+    =display_popular_tags(popular_tags)
+    %br
+    %h3 Some Other Info
+    .box hello world lorem ipsum valami mas
+    %br
+    %h3 Some Other2 Info
+
