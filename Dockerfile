@@ -85,6 +85,8 @@ RUN apk del .ruby-builddeps
 
 WORKDIR /QASite/lib
 
+EXPOSE 4567
+
 CMD [ "ruby", "/QASite/lib/main.rb" ]
 
 
